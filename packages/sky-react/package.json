@@ -33,7 +33,8 @@
   "dependencies": {
     "@stately/core": "*",
     "@xstate/react": "4.0.0-beta.10",
-    "react": "^18.2.0"
+    "react": "^18.2.0",
+    "xstate": "5.0.0-beta.30"
   },
   "devDependencies": {
     "@types/react": "^18.2.22"
