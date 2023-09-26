@@ -1,0 +1,34 @@
+{
+  "name": "@stately/sky-react",
+  "version": "0.0.1",
+  "private": true,
+  "description": "",
+  "main": "dist/stately-sky-react.cjs.js",
+  "module": "dist/stately-sky-react.esm.js",
+  "exports": {
+    ".": {
+      "types": {
+        "import": "./dist/stately-sky-react.cjs.mjs",
+        "default": "./dist/stately-sky-react.cjs.js"
+      },
+      "module": "./dist/stately-sky-react.esm.js",
+      "import": "./dist/stately-sky-react.cjs.mjs",
+      "default": "./dist/stately-sky-react.cjs.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
+  "keywords": [],
+  "scripts": {},
+  "repository": "https://github.com/statelyai/sky/tree/master/packages/sky-react",
+  "author": "Stately Team",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/statelyai/sky/issues"
+  },
+  "homepage": "https://github.com/statelyai/sky/tree/main/packages/sky-react#readme",
+  "devDependencies": {}
+}

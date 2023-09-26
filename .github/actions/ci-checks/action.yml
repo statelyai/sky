@@ -1,0 +1,11 @@
+name: "CI checks"
+runs:
+  using: "composite"
+  steps:
+    - name: Build
+      run: yarn build
+      shell: bash
+
+    - name: Typecheck
+      run: yarn typecheck
+      shell: bash
