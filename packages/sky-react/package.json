@@ -1,5 +1,5 @@
 {
-  "name": "@stately/sky-react",
+  "name": "@statelyai/sky-react",
   "version": "0.0.1",
   "description": "",
   "main": "dist/stately-sky-react.cjs.js",
@@ -30,7 +30,7 @@
   },
   "homepage": "https://github.com/statelyai/sky/tree/main/packages/sky-react#readme",
   "dependencies": {
-    "@stately/sky": "0.0.1",
+    "@statelyai/sky": "0.0.1",
     "@xstate/react": "4.0.0-beta.10",
     "xstate": "5.0.0-beta.30"
   },
