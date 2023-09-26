@@ -1,4 +1,4 @@
-import { SkyConfigFile, actorFromStately } from '@stately/sky';
+import { SkyConfigFile, actorFromStately } from '@statelyai/sky';
 import { useSelector } from '@xstate/react';
 import { useEffect, useState } from 'react';
 import { Actor, AnyStateMachine, createActor, fromPromise } from 'xstate';
