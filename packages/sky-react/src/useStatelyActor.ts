@@ -1,8 +1,13 @@
 import { SkyConfigFile, actorFromStately } from '@statelyai/sky';
 import { useSelector } from '@xstate/react';
 import { useEffect, useState } from 'react';
-import { Actor, AnyStateMachine, createActor, fromPromise } from 'xstate';
-import { createEmptyActor } from 'xstate/actors';
+import {
+  Actor,
+  AnyStateMachine,
+  createActor,
+  createEmptyActor,
+  fromPromise,
+} from 'xstate';
 
 export function useStatelyActor<T extends AnyStateMachine>(
   {
