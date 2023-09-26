@@ -2,17 +2,17 @@
   "name": "@statelyai/sky-react",
   "version": "0.0.1",
   "description": "",
-  "main": "dist/stately-sky-react.cjs.js",
-  "module": "dist/stately-sky-react.esm.js",
+  "main": "dist/statelyai-sky-react.cjs.js",
+  "module": "dist/statelyai-sky-react.esm.js",
   "exports": {
     ".": {
       "types": {
-        "import": "./dist/stately-sky-react.cjs.mjs",
-        "default": "./dist/stately-sky-react.cjs.js"
+        "import": "./dist/statelyai-sky-react.cjs.mjs",
+        "default": "./dist/statelyai-sky-react.cjs.js"
       },
-      "module": "./dist/stately-sky-react.esm.js",
-      "import": "./dist/stately-sky-react.cjs.mjs",
-      "default": "./dist/stately-sky-react.cjs.js"
+      "module": "./dist/statelyai-sky-react.esm.js",
+      "import": "./dist/statelyai-sky-react.cjs.mjs",
+      "default": "./dist/statelyai-sky-react.cjs.js"
     },
     "./package.json": "./package.json"
   },
