@@ -1,7 +1,6 @@
 {
   "name": "@stately/sky-react",
   "version": "0.0.1",
-  "private": true,
   "description": "",
   "main": "dist/stately-sky-react.cjs.js",
   "module": "dist/stately-sky-react.esm.js",

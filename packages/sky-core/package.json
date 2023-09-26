@@ -1,7 +1,6 @@
 {
   "name": "@stately/sky",
   "version": "0.0.1",
-  "private": true,
   "description": "",
   "main": "dist/stately-sky.cjs.js",
   "module": "dist/stately-sky.esm.js",
