@@ -18,6 +18,7 @@
     "@manypkg/cli": "^0.21.0",
     "@preconstruct/cli": "^2.8.1",
     "prettier": "^3.0.3",
+    "prettier-plugin-organize-imports": "^3.2.3",
     "typescript": "^5.2.2"
   },
   "scripts": {
@@ -30,7 +31,6 @@
     "release": "changeset publish",
     "version": "changeset version"
   },
-  "prettier": {},
   "preconstruct": {
     "packages": [
       "packages/*"
