@@ -35,11 +35,18 @@ export async function actorFromStately<T extends AnyStateMachine>(
   } else {
     // Get the host for Partykit and the API base URL for Stately Studio
     const { host, apiBaseURL } = skyConnectionInfo();
+    console.log('host', host);
+    console.log('apiBaseURL', apiBaseURL);
+
     const { actorId, machine } = skyConfig;
+    console.log('actorId', actorId);
+
     const apiKey =
       _apiKey ??
       process.env.STATELY_SKY_API_KEY ??
       process.env.NEXT_PUBLIC_STATELY_SKY_API_KEY;
+
+    console.log('apiKey', apiKey);
 
     if (!apiKey) {
       throw new Error(
