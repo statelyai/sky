@@ -7,10 +7,10 @@ import {
   EventFromLogic,
   createActor,
 } from 'xstate';
+import { SKY_API_KEY } from './env';
 import { SkyConfigFile, SkyServerEvent } from './types';
 import { sendToSky, skyConnectionInfo } from './utils';
 
-let actor: AnyActor | undefined;
 export async function actorFromStately<T extends AnyStateMachine>(
   {
     apiKey: _apiKey,
@@ -33,20 +33,13 @@ export async function actorFromStately<T extends AnyStateMachine>(
   if (!runOnSky) {
     return createActor(skyConfig.machine);
   } else {
+    let actor: AnyActor | undefined;
+    let partySocket: PartySocket | undefined;
+
     // Get the host for Partykit and the API base URL for Stately Studio
     const { host, apiBaseURL } = skyConnectionInfo();
-    console.log('host', host);
-    console.log('apiBaseURL', apiBaseURL);
-
     const { actorId, machine } = skyConfig;
-    console.log('actorId', actorId);
-
-    const apiKey =
-      _apiKey ??
-      process.env.STATELY_SKY_API_KEY ??
-      process.env.NEXT_PUBLIC_STATELY_SKY_API_KEY;
-
-    console.log('apiKey', apiKey);
+    const apiKey = _apiKey ?? SKY_API_KEY;
 
     if (!apiKey) {
       throw new Error(
@@ -55,11 +48,16 @@ export async function actorFromStately<T extends AnyStateMachine>(
     }
 
     return new Promise<Actor<T>>((resolve, reject) => {
+      // Close the previous socket if it exists, this can easily happen when using React
+      if (partySocket && partySocket.OPEN) {
+        partySocket.close();
+      }
       // Create a unique room for this actor run
       const room = sessionId ? `${actorId}-${sessionId}` : actorId;
-      const partySocket = new PartySocket({ host, room });
+      partySocket = new PartySocket({ host, room });
       partySocket.onerror = (err) => reject(err);
       partySocket.onopen = () => {
+        if (!partySocket) return;
         return sendToSky(partySocket, {
           apiKey,
           type: 'actor.init',
@@ -82,7 +80,7 @@ export async function actorFromStately<T extends AnyStateMachine>(
             // Start the actor with the initial value from Sky
             actor = createActor(machine, {
               state: skyEvent.persistedState,
-            }).start();
+            });
 
             // Send all events from the actor to Sky except for events that originate from Sky
             const originalSend = actor.send;
@@ -93,7 +91,7 @@ export async function actorFromStately<T extends AnyStateMachine>(
               originalSend.call(this, event);
 
               // Don't start an infinite loop by sending events back to Sky
-              if (event.sendToSky === false) return;
+              if (event.sendToSky === false || !partySocket) return;
 
               sendToSky(partySocket, {
                 apiKey,
@@ -110,7 +108,6 @@ export async function actorFromStately<T extends AnyStateMachine>(
               ...skyEvent.event,
               sendToSky: false,
             } as EventFromLogic<T>);
-
             break;
           }
           case 'actor.stop': {

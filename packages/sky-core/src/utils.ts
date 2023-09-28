@@ -7,10 +7,7 @@ export const sendToSky = (socket: PartySocket, event: SkyClientEvent) => {
   socket.send(superjson.stringify(event));
 };
 
+// TODO: test that this works in a Node based environment
 export function skyConnectionInfo() {
-  // TODO: test that this works in a Node based environment
-  return {
-    host: SKY_HOST ?? 'stately-sky-beta.mellson.partykit.dev',
-    apiBaseURL: SKY_API_URL ?? 'https://stately.ai/registry/api/sky',
-  };
+  return { host: SKY_HOST, apiBaseURL: SKY_API_URL };
 }
