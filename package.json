@@ -29,7 +29,10 @@
     "typecheck": "tsc",
     "changeset": "changeset",
     "release": "changeset publish",
-    "version": "changeset version"
+    "version": "changeset version",
+    "copy-sky": "cp -r packages/sky-core/ ../studio/node_modules/@statelyai/sky",
+    "copy-sky-react": "cp -r packages/sky-react/ ../studio/node_modules/@statelyai/sky-react",
+    "dev": "yarn build && yarn copy-sky && yarn copy-sky-react"
   },
   "preconstruct": {
     "packages": [

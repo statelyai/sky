@@ -1,10 +1,12 @@
 import { AnyStateMachine } from 'xstate';
 
-export interface SkyConfig {
-  config: any;
-  actor: { id: string };
-  prettyConfigString: string;
-}
+export type SkyConfig =
+  | {
+      config: any;
+      actorId: string;
+      prettyConfigString: string;
+    }
+  | { error: string };
 
 export interface SkyConfigFile<T extends AnyStateMachine> {
   machine: T;
