@@ -898,6 +898,16 @@
   resolved "https://registry.yarnpkg.com/@sindresorhus/is/-/is-0.14.0.tgz#9fb3a3cf3132328151f353de4632e01e52102bea"
   integrity sha512-9NET910DNaIPngYnLLPeg+Ogzqsi9uM4mSboU5y6p8S5DzMTVEsJZrawi+BoDNUVBa2DhJqQYUFvMDfgU062LQ==
 
+"@statelyai/sky@0.0.1":
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/@statelyai/sky/-/sky-0.0.1.tgz#01557345eb25feb015aee9f972da84afab3b4744"
+  integrity sha512-6aFL1NVFXFEOp9RC5koHDndLI9YdujKoT+QzKZW45QpiMeabdlikwo182w9CQt2eK4tqV+ctv2s+KEDEQryXFg==
+  dependencies:
+    partykit "0.0.23"
+    partysocket "0.0.8"
+    superjson "1.13.1"
+    xstate "5.0.0-beta.30"
+
 "@szmarczak/http-timer@^1.1.2":
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/@szmarczak/http-timer/-/http-timer-1.1.2.tgz#b1665e2c461a2cd92f4c1bbf50d5454de0d4b421"
@@ -1472,11 +1482,6 @@ dir-glob@^3.0.1:
   integrity sha512-WkrWp9GR4KXfKGYzOLmTuGVi1UWFfws377n9cc55/tb6DuqyF6pcQ5AbiHEshaDpY9v6oaSr2XCDidGmMwdzIA==
   dependencies:
     path-type "^4.0.0"
-
-dotenv@^16.3.1:
-  version "16.3.1"
-  resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-16.3.1.tgz#369034de7d7e5b120972693352a3bf112172cc3e"
-  integrity sha512-IPzF4w4/Rd94bA9imS68tZBaYyBWSCE47V1RGuMrB94iyTOIEwRmVL2x/4An+6mETpLrKJ5hQkB8W4kFAadeIQ==
 
 dotenv@^8.1.0:
   version "8.6.0"
