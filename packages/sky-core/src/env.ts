@@ -3,7 +3,6 @@ let SKY_API_URL = 'https://stately.ai/registry/api/sky';
 let SKY_API_KEY: string | undefined = undefined;
 
 if (typeof process !== 'undefined') {
-  // require('dotenv').config();
   // We're likely running in Node.js
   if (process.env.NEXT_PUBLIC_SKY_HOST) {
     SKY_HOST = process.env.NEXT_PUBLIC_SKY_HOST;

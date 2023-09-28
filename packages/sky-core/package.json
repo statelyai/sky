@@ -30,7 +30,6 @@
   },
   "homepage": "https://github.com/statelyai/sky/tree/main/packages/sky-core#readme",
   "dependencies": {
-    "dotenv": "^16.3.1",
     "partykit": "0.0.23",
     "partysocket": "0.0.8",
     "superjson": "1.13.1",
