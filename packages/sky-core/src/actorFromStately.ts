@@ -20,7 +20,7 @@ export async function actorFromStately<T extends AnyStateMachine>(
   }: {
     apiKey?: string;
     url: string;
-    sessionId?: string;
+    sessionId: string;
     runOnSky?: boolean;
   },
   skyConfig?: SkyConfigFile<T>,
@@ -53,7 +53,7 @@ export async function actorFromStately<T extends AnyStateMachine>(
         partySocket.close();
       }
       // Create a unique room for this actor run
-      const room = sessionId ? `${actorId}-${sessionId}` : actorId;
+      const room = `${actorId}-${sessionId}`;
       partySocket = new PartySocket({ host, room });
       partySocket.onerror = (err) => reject(err);
       partySocket.onopen = () => {

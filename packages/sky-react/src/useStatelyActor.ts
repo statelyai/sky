@@ -12,7 +12,7 @@ export function useStatelyActor<T extends AnyStateMachine>(
   }: {
     apiKey?: string;
     url: string;
-    sessionId?: string;
+    sessionId: string;
     runOnSky?: boolean;
   },
   skyConfig?: SkyConfigFile<T>,
