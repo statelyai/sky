@@ -3,6 +3,16 @@ import superjson from 'superjson';
 import { SKY_API_URL, SKY_HOST } from './env';
 import { SkyClientEvent } from './types';
 
+import { Event, EventTarget } from 'event-target-shim';
+
+if (!globalThis.Event) {
+  globalThis.Event = Event;
+}
+
+if (!globalThis.EventTarget) {
+  globalThis.EventTarget = EventTarget;
+}
+
 export const sendToSky = (socket: PartySocket, event: SkyClientEvent) => {
   socket.send(superjson.stringify(event));
 };

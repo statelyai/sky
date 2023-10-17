@@ -11,6 +11,16 @@ import { SKY_API_KEY } from './env';
 import { SkyConfigFile, SkyServerEvent } from './types';
 import { sendToSky, skyConnectionInfo } from './utils';
 
+import { Event, EventTarget } from 'event-target-shim';
+
+if (!globalThis.Event) {
+  globalThis.Event = Event;
+}
+
+if (!globalThis.EventTarget) {
+  globalThis.EventTarget = EventTarget;
+}
+
 export async function actorFromStately<T extends AnyStateMachine>(
   {
     apiKey: _apiKey,
