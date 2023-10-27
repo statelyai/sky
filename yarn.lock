@@ -2445,12 +2445,10 @@ parse-json@^5.0.0, parse-json@^5.1.0:
     json-parse-even-better-errors "^2.3.0"
     lines-and-columns "^1.1.6"
 
-partysocket@0.0.9:
-  version "0.0.9"
-  resolved "https://registry.yarnpkg.com/partysocket/-/partysocket-0.0.9.tgz#8c898ae5697bac76d3c3569c4671401c3b575cea"
-  integrity sha512-SVFtPseMU9DC7fd7MdMx/y9MgWFMteWBgL0wVDQ90nCRBzt/pD1x8ovIqsCFK7uo1KXOXvqJuf9vjTIGPw77Wg==
-  dependencies:
-    react "^18.2.0"
+partysocket@0.0.12:
+  version "0.0.12"
+  resolved "https://registry.yarnpkg.com/partysocket/-/partysocket-0.0.12.tgz#97285d8047121fe82d8294f46dea037f579c5b22"
+  integrity sha512-20fikH08aHl7oJvRD7QLftzHvCEqxHf6y/ZiO0wltkl2cbNbtZQuDno9CLrqIQG2t22UWFHjiSqj/rT1In36Eg==
 
 path-exists@^4.0.0:
   version "4.0.0"
@@ -3216,10 +3214,10 @@ wrappy@1:
   resolved "https://registry.yarnpkg.com/wrappy/-/wrappy-1.0.2.tgz#b5243d8f3ec1aa35f1364605bc0d1036e30ab69f"
   integrity sha512-l4Sp/DRseor9wL6EvV2+TuQn63dMkPjZ/sp9XkghTEbV9KlPS1xUsZ3u7/IQO4wxtcFB4bgpQPRcR3QCvezPcQ==
 
-xstate@5.0.0-beta.33:
-  version "5.0.0-beta.33"
-  resolved "https://registry.yarnpkg.com/xstate/-/xstate-5.0.0-beta.33.tgz#2f25ce90cc0d7b1c84a5183347f5cecb980e065e"
-  integrity sha512-zHwbY2d2GGrsIySUCybrlq6YAPGM20yKpvliroDqfSbwa255Z1d7RYLkbbxiLx8SnEwDpWVple7JTXkjOw3JLA==
+xstate@5.0.0-beta.37:
+  version "5.0.0-beta.37"
+  resolved "https://registry.yarnpkg.com/xstate/-/xstate-5.0.0-beta.37.tgz#617dc79ec2dc6b30b2567da93c0559bf2d595b34"
+  integrity sha512-pbdl6piQ7H+KGd8TKxo5htomMkP85HXLVfTuUy6J0JMPvI8srum3YD+QINx3Ea4QAib8tqk28u70BNq2opnoIw==
 
 y18n@^4.0.0:
   version "4.0.3"

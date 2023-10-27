@@ -4,22 +4,12 @@ import { useEffect, useState } from 'react';
 import { Actor, AnyStateMachine, createActor, fromPromise } from 'xstate';
 
 export function useStatelyActor<T extends AnyStateMachine>(
-  {
-    apiKey,
-    url,
-    sessionId,
-    runOnSky = true,
-  }: {
-    apiKey?: string;
-    url: string;
-    sessionId: string;
-    runOnSky?: boolean;
-  },
+  options: Parameters<typeof actorFromStately>[0],
   skyConfig?: SkyConfigFile<T>,
 ) {
   if (!skyConfig) {
     throw new Error(
-      `You need to run xstate sky "src/**/*.ts?(x)" before you can use the Stately Sky actor with url ${url}`,
+      `You need to run xstate sky "src/**/*.ts?(x)" before you can use the Stately Sky actor with url ${options.url}`,
     );
   }
 
@@ -31,17 +21,7 @@ export function useStatelyActor<T extends AnyStateMachine>(
 
   useEffect(() => {
     const subscription = createActor(
-      fromPromise(() =>
-        actorFromStately(
-          {
-            url,
-            apiKey,
-            sessionId,
-            runOnSky,
-          },
-          skyConfig,
-        ),
-      ),
+      fromPromise(() => actorFromStately(options, skyConfig)),
     )
       .start()
       .subscribe((s) => {
@@ -49,7 +29,11 @@ export function useStatelyActor<T extends AnyStateMachine>(
         return setMaybeActor(s.output);
       });
     return () => subscription.unsubscribe();
-  }, [apiKey, runOnSky, sessionId, skyConfig, url]);
+  }, [options.url, options.sessionId, skyConfig]);
 
-  return [state, maybeActor?.send, maybeActor] as const;
+  const send = maybeActor?.send;
+  const isConnecting = send === undefined;
+
+  const sky = { isConnecting };
+  return [state, send, maybeActor, sky] as const;
 }

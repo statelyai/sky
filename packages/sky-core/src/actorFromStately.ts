@@ -17,11 +17,15 @@ export async function actorFromStately<T extends AnyStateMachine>(
     url,
     sessionId,
     runOnSky = true,
+    onPlayerJoined,
+    onPlayerLeft,
   }: {
     apiKey?: string;
     url: string;
     sessionId: string;
     runOnSky?: boolean;
+    onPlayerJoined?: ({ numberOfPlayers }: { numberOfPlayers: number }) => void;
+    onPlayerLeft?: ({ numberOfPlayers }: { numberOfPlayers: number }) => void;
   },
   skyConfig?: SkyConfigFile<T>,
 ) {
@@ -73,6 +77,14 @@ export async function actorFromStately<T extends AnyStateMachine>(
         const skyEvent = superjson.parse<SkyServerEvent>(evt.data);
         if (skyEvent.apiKey !== apiKey) return;
         switch (skyEvent.type) {
+          case 'player.joined': {
+            onPlayerJoined?.({ numberOfPlayers: skyEvent.numberOfPlayers });
+            break;
+          }
+          case 'player.left': {
+            onPlayerLeft?.({ numberOfPlayers: skyEvent.numberOfPlayers });
+            break;
+          }
           case 'actor.error': {
             throw new Error(skyEvent.error);
           }
