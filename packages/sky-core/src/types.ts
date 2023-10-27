@@ -64,6 +64,16 @@ type InternalSkyServerActorEvent =
   | { type: 'actor.stop'; event: AnyEventObject }
   | { type: 'actor.error'; error: string };
 
+type MultiplayerSkyEvent = {
+  type: 'player.joined' | 'player.left';
+  numberOfPlayers: number;
+};
+
+export type SkyServerMultiplayerEvent = SafeSkyEvent & MultiplayerSkyEvent;
+
 export type SkyServerActorEvent = SafeSkyEvent & InternalSkyServerActorEvent;
 
-export type SkyServerEvent = SkyServerSimulateEvent | SkyServerActorEvent;
+export type SkyServerEvent =
+  | SkyServerSimulateEvent
+  | SkyServerActorEvent
+  | SkyServerMultiplayerEvent;

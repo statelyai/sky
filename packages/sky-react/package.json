@@ -1,6 +1,6 @@
 {
   "name": "@statelyai/sky-react",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "",
   "main": "dist/statelyai-sky-react.cjs.js",
   "module": "dist/statelyai-sky-react.esm.js",
@@ -30,9 +30,9 @@
   },
   "homepage": "https://github.com/statelyai/sky/tree/main/packages/sky-react#readme",
   "dependencies": {
-    "@statelyai/sky": "0.0.4",
+    "@statelyai/sky": "0.0.5",
     "@xstate/react": "4.0.0-beta.10",
-    "xstate": "5.0.0-beta.33"
+    "xstate": "5.0.0-beta.37"
   },
   "devDependencies": {
     "@types/react": "^18.2.22",
