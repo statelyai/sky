@@ -34,9 +34,6 @@ type InternalSkyClientSimulateEvent =
   | { type: 'simulation.stop' }
   | { type: 'simulation.update' | 'simulation.reset'; value: StateValue };
 
-export type SkyClientSimulateEvent = SafeSkyEvent &
-  InternalSkyClientSimulateEvent;
-
 type InternalSkyClientActorEvent =
   | {
       type: 'actor.init';
@@ -46,9 +43,18 @@ type InternalSkyClientActorEvent =
     }
   | { type: 'actor.send'; event: AnyEventObject };
 
+type InternalClientEditorEvent = { type: 'digraphEvent'; event: any };
+
+export type SkyClientSimulateEvent = SafeSkyEvent &
+  InternalSkyClientSimulateEvent;
+export type SkyClientEditorEvent = SafeSkyEvent & InternalClientEditorEvent;
+
 export type SkyClientActorEvent = SafeSkyEvent & InternalSkyClientActorEvent;
 
-export type SkyClientEvent = SkyClientSimulateEvent | SkyClientActorEvent;
+export type SkyClientEvent =
+  | SkyClientSimulateEvent
+  | SkyClientActorEvent
+  | SkyClientEditorEvent;
 
 type InternalSkyServerSimulateEvent =
   | { type: 'simulation.start'; value?: StateValue }
@@ -69,11 +75,16 @@ type MultiplayerSkyEvent = {
   numberOfPlayers: number;
 };
 
+type InternalServerEditorEvent = { type: 'digraphEvent'; event: any };
+
 export type SkyServerMultiplayerEvent = SafeSkyEvent & MultiplayerSkyEvent;
 
 export type SkyServerActorEvent = SafeSkyEvent & InternalSkyServerActorEvent;
 
+export type SkyServerEditorEvent = SafeSkyEvent & InternalServerEditorEvent;
+
 export type SkyServerEvent =
   | SkyServerSimulateEvent
   | SkyServerActorEvent
-  | SkyServerMultiplayerEvent;
+  | SkyServerMultiplayerEvent
+  | SkyServerEditorEvent;
