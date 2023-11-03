@@ -1,5 +1,12 @@
 # @statelyai/sky-react
 
+## 0.0.6
+
+### Patch Changes
+
+- Updated dependencies [[`db58b38`](https://github.com/statelyai/sky/commit/db58b386e1ba2c85a84eba943f60bfd75d445043)]:
+  - @statelyai/sky@0.0.6
+
 ## 0.0.4
 
 ### Patch Changes
