@@ -1,5 +1,11 @@
 # @statelyai/sky
 
+## 0.0.7
+
+### Patch Changes
+
+- [#11](https://github.com/statelyai/sky/pull/11) [`2a9016d`](https://github.com/statelyai/sky/commit/2a9016d9716d92cb45a5465d09b5bc701b2fbc2b) Thanks [@mellson](https://github.com/mellson)! - Remove unused/unneeded `runOnSky` option.
+
 ## 0.0.6
 
 ### Patch Changes
