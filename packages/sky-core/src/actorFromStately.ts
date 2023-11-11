@@ -7,19 +7,18 @@ import {
   EventFromLogic,
   createActor,
 } from 'xstate';
-import { SKY_API_KEY } from './env';
 import { SkyConfigFile, SkyServerEvent } from './types';
 import { sendToSky, skyConnectionInfo } from './utils';
 
 export async function actorFromStately<T extends AnyStateMachine>(
   {
-    apiKey: _apiKey,
+    apiKey,
     url,
     sessionId,
     onPlayerJoined,
     onPlayerLeft,
   }: {
-    apiKey?: string;
+    apiKey: string;
     url: string;
     sessionId: string;
     onPlayerJoined?: ({ numberOfPlayers }: { numberOfPlayers: number }) => void;
@@ -39,7 +38,6 @@ export async function actorFromStately<T extends AnyStateMachine>(
   // Get the host for Partykit and the API base URL for Stately Studio
   const { host, apiBaseURL } = skyConnectionInfo();
   const { actorId, machine } = skyConfig;
-  const apiKey = _apiKey ?? SKY_API_KEY;
 
   if (!apiKey) {
     throw new Error(
