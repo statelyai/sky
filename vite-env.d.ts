@@ -7,6 +7,5 @@ interface ImportMeta {
     DEV: boolean;
     VITE_SKY_HOST?: string;
     VITE_SKY_API_URL?: string;
-    VITE_SKY_API_KEY?: string;
   };
 }
