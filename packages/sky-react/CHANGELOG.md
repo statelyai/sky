@@ -1,5 +1,14 @@
 # @statelyai/sky-react
 
+## 0.0.8
+
+### Patch Changes
+
+- [#14](https://github.com/statelyai/sky/pull/14) [`b1e0966`](https://github.com/statelyai/sky/commit/b1e09666ec8ad62a8665173731ddef24beaecfa8) Thanks [@mellson](https://github.com/mellson)! - Make the API key required.
+
+- Updated dependencies [[`b1e0966`](https://github.com/statelyai/sky/commit/b1e09666ec8ad62a8665173731ddef24beaecfa8)]:
+  - @statelyai/sky@0.0.8
+
 ## 0.0.7
 
 ### Patch Changes
