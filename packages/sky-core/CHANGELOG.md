@@ -1,5 +1,11 @@
 # @statelyai/sky
 
+## 0.0.9
+
+### Patch Changes
+
+- [#16](https://github.com/statelyai/sky/pull/16) [`34c0dc1`](https://github.com/statelyai/sky/commit/34c0dc12a58c36f1c57a1b1694a2b7274f2d2b08) Thanks [@mellson](https://github.com/mellson)! - Close the underlying partysocket when an actor stops.
+
 ## 0.0.8
 
 ### Patch Changes
