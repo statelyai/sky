@@ -32,7 +32,6 @@
   "dependencies": {
     "@statelyai/sky": "0.0.8",
     "@xstate/react": "4.0.0-beta.10",
-    "partysocket": "0.0.12",
     "xstate": "5.0.0-beta.37"
   },
   "devDependencies": {
