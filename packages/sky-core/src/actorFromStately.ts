@@ -99,6 +99,8 @@ export async function actorFromStately<T extends AnyStateMachine>(
               event,
             });
           };
+          // Close the socket when the actor stops
+          actor.subscribe({ complete: () => partySocket?.close() });
           resolve(actor);
           break;
         }
