@@ -1,6 +1,6 @@
 import { SkyConfigFile, actorFromStately } from '@statelyai/sky';
 import { useSelector } from '@xstate/react';
-import { useEffect, useRef } from 'react';
+import { useEffect, useState } from 'react';
 import { Actor, AnyStateMachine, createActor, fromPromise } from 'xstate';
 
 export function useStatelyActor<T extends AnyStateMachine>(
@@ -13,9 +13,9 @@ export function useStatelyActor<T extends AnyStateMachine>(
     );
   }
 
-  const actor = useRef<Actor<T>>();
+  const [maybeActor, setMaybeActor] = useState<Actor<T>>();
   const state = useSelector(
-    actor.current ?? createActor(skyConfig.machine),
+    maybeActor ?? createActor(skyConfig.machine),
     (snapshot) => snapshot,
   );
 
@@ -25,18 +25,23 @@ export function useStatelyActor<T extends AnyStateMachine>(
     )
       .start()
       .subscribe((s) => {
-        actor.current = s.output;
-        actor.current?.start();
+        s.output?.start();
+        return setMaybeActor(s.output);
       });
     return () => {
-      actor.current?.stop();
       return subscription.unsubscribe();
     };
   }, [options.url, options.sessionId, skyConfig]);
 
-  const send = actor.current?.send;
+  useEffect(() => {
+    return () => {
+      maybeActor?.stop();
+    };
+  }, [maybeActor]);
+
+  const send = maybeActor?.send;
   const isConnecting = send === undefined;
 
   const sky = { isConnecting };
-  return [state, send, actor.current, sky] as const;
+  return [state, send, maybeActor, sky] as const;
 }
