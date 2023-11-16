@@ -24,16 +24,14 @@ export function useStatelyActor<T extends AnyStateMachine>(
       fromPromise(() => actorFromStately(options, skyConfig)),
     )
       .start()
-      .subscribe((s) => {
-        s.output?.start();
-        return setMaybeActor(s.output);
-      });
+      .subscribe(({ output }) => setMaybeActor(output));
     return () => {
       return subscription.unsubscribe();
     };
   }, [options.url, options.sessionId, skyConfig]);
 
   useEffect(() => {
+    maybeActor?.start();
     return () => {
       maybeActor?.stop();
     };
