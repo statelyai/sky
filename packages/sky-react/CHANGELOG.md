@@ -1,5 +1,14 @@
 # @statelyai/sky-react
 
+## 0.0.10
+
+### Patch Changes
+
+- [#18](https://github.com/statelyai/sky/pull/18) [`dcffee8`](https://github.com/statelyai/sky/commit/dcffee8a6d6ee88e38705d0441244e0ef8a6950e) Thanks [@mellson](https://github.com/mellson)! - Update to the XState 5 release version.
+
+- Updated dependencies [[`dcffee8`](https://github.com/statelyai/sky/commit/dcffee8a6d6ee88e38705d0441244e0ef8a6950e)]:
+  - @statelyai/sky@0.0.10
+
 ## 0.0.9
 
 ### Patch Changes
