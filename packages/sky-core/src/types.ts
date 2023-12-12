@@ -65,7 +65,7 @@ export type SkyServerSimulateEvent = SafeSkyEvent &
   InternalSkyServerSimulateEvent;
 
 type InternalSkyServerActorEvent =
-  | { type: 'actor.start'; persistedState: SnapshotFrom<AnyActorLogic> }
+  | { type: 'actor.start'; snapshot: SnapshotFrom<AnyActorLogic> }
   | { type: 'actor.send'; event: AnyEventObject }
   | { type: 'actor.stop'; event: AnyEventObject }
   | { type: 'actor.error'; error: string };
