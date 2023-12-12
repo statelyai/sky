@@ -838,10 +838,10 @@
   resolved "https://registry.yarnpkg.com/@types/semver/-/semver-7.5.3.tgz#9a726e116beb26c24f1ccd6850201e1246122e04"
   integrity sha512-OxepLK9EuNEIPxWNME+C6WwbRAOOI2o2BaQEGzz5Lu2e4Z5eDnEo+/aVEDMIXywoJitJ7xWd641wrGLZdtwRyw==
 
-"@xstate/react@4.0.0-beta.10":
-  version "4.0.0-beta.10"
-  resolved "https://registry.yarnpkg.com/@xstate/react/-/react-4.0.0-beta.10.tgz#35b67128560b2fab685e3d3113c3392b1c93492e"
-  integrity sha512-S77ALlcoMYMiG9cVlf9qpcy0V6hZ6Va9K/jU4xidX21JsI6YI9i8HMtmMAiRbeV+chkwThe0otEEWFFUWXNHgg==
+"@xstate/react@4.0.1":
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/@xstate/react/-/react-4.0.1.tgz#a5cec511e23e44ac5dd64852a1497efb6434c3f0"
+  integrity sha512-UB9qUC11wcaYd05wGea0mvEA3uTHikNaB4InMZfxD7MVFxzBFU+3JFkemjiN8bDdPJfDrObyP9ZPDVojq2LytA==
   dependencies:
     use-isomorphic-layout-effect "^1.1.2"
     use-sync-external-store "^1.0.0"
@@ -2445,10 +2445,10 @@ parse-json@^5.0.0, parse-json@^5.1.0:
     json-parse-even-better-errors "^2.3.0"
     lines-and-columns "^1.1.6"
 
-partysocket@0.0.12:
-  version "0.0.12"
-  resolved "https://registry.yarnpkg.com/partysocket/-/partysocket-0.0.12.tgz#97285d8047121fe82d8294f46dea037f579c5b22"
-  integrity sha512-20fikH08aHl7oJvRD7QLftzHvCEqxHf6y/ZiO0wltkl2cbNbtZQuDno9CLrqIQG2t22UWFHjiSqj/rT1In36Eg==
+partysocket@0.0.17:
+  version "0.0.17"
+  resolved "https://registry.yarnpkg.com/partysocket/-/partysocket-0.0.17.tgz#cb36858e5c2749cbf3ef9208f7df22c028162105"
+  integrity sha512-8Re9nmgP2LzQhq+FBs9+BZNTjmMwoF4geEKlpH0lxW1JKp3FmplN74306afGH9EsOjdfcXqKY2VCZtc3iAHIow==
 
 path-exists@^4.0.0:
   version "4.0.0"
@@ -3214,10 +3214,10 @@ wrappy@1:
   resolved "https://registry.yarnpkg.com/wrappy/-/wrappy-1.0.2.tgz#b5243d8f3ec1aa35f1364605bc0d1036e30ab69f"
   integrity sha512-l4Sp/DRseor9wL6EvV2+TuQn63dMkPjZ/sp9XkghTEbV9KlPS1xUsZ3u7/IQO4wxtcFB4bgpQPRcR3QCvezPcQ==
 
-xstate@5.0.0-beta.37:
-  version "5.0.0-beta.37"
-  resolved "https://registry.yarnpkg.com/xstate/-/xstate-5.0.0-beta.37.tgz#617dc79ec2dc6b30b2567da93c0559bf2d595b34"
-  integrity sha512-pbdl6piQ7H+KGd8TKxo5htomMkP85HXLVfTuUy6J0JMPvI8srum3YD+QINx3Ea4QAib8tqk28u70BNq2opnoIw==
+xstate@5.2.1:
+  version "5.2.1"
+  resolved "https://registry.yarnpkg.com/xstate/-/xstate-5.2.1.tgz#55f1736cccdff58938277d1e1e2a91a01d37f008"
+  integrity sha512-qPYPnoYIvNSwSv4uIwV+V/uFeGk6houLGmZy0io1XsfImBrp1AKbw9ADNJytCksCDP/YOAg1EtiWjXFzsT1rdw==
 
 y18n@^4.0.0:
   version "4.0.3"

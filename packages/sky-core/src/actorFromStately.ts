@@ -78,8 +78,8 @@ export async function actorFromStately<T extends AnyStateMachine>(
         }
         case 'actor.start': {
           // Start the actor with the initial value from Sky
-          actor = createActor(machine, {
-            state: skyEvent.persistedState,
+          actor = createActor(machine as any, {
+            snapshot: skyEvent.snapshot,
           });
 
           // Send all events from the actor to Sky except for events that originate from Sky
