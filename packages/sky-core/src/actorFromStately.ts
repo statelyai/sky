@@ -78,7 +78,7 @@ export async function actorFromStately<T extends AnyStateMachine>(
         }
         case 'actor.start': {
           // Start the actor with the initial value from Sky
-          actor = createActor(machine, {
+          actor = createActor(machine as any, {
             state: skyEvent.persistedState,
           });
 

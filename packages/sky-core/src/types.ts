@@ -1,10 +1,16 @@
-import { AnyStateMachine } from 'xstate';
+import {
+  AnyEventObject,
+  AnyStateMachine,
+  SnapshotFrom,
+  StateValue,
+} from 'xstate';
 
 export type SkyConfig =
   | {
       config: any;
       actorId: string;
-      prettyConfigString: string;
+      configString: string;
+      implementationString: string;
     }
   | { error: string };
 
@@ -12,13 +18,6 @@ export interface SkyConfigFile<T extends AnyStateMachine> {
   machine: T;
   actorId: string;
 }
-
-import {
-  AnyActorLogic,
-  AnyEventObject,
-  PersistedStateFrom,
-  StateValue,
-} from 'xstate';
 
 interface SafeSkyEvent {
   apiKey: string;
@@ -65,7 +64,7 @@ export type SkyServerSimulateEvent = SafeSkyEvent &
   InternalSkyServerSimulateEvent;
 
 type InternalSkyServerActorEvent =
-  | { type: 'actor.start'; persistedState: PersistedStateFrom<AnyActorLogic> }
+  | { type: 'actor.start'; persistedState: SnapshotFrom<AnyStateMachine> }
   | { type: 'actor.send'; event: AnyEventObject }
   | { type: 'actor.stop'; event: AnyEventObject }
   | { type: 'actor.error'; error: string };
