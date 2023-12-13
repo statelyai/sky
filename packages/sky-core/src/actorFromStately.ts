@@ -25,7 +25,7 @@ export async function actorFromStately<T extends AnyStateMachine>(
     onPlayerLeft?: ({ numberOfPlayers }: { numberOfPlayers: number }) => void;
   },
   skyConfig?: SkyConfigFile<T>,
-) {
+): Promise<Actor<T>> {
   if (!skyConfig) {
     throw new Error(
       `You need to run xstate sky "src/**/*.ts?(x)" before you can use the Stately Sky actor with url ${url}`,
@@ -78,7 +78,7 @@ export async function actorFromStately<T extends AnyStateMachine>(
         }
         case 'actor.start': {
           // Start the actor with the initial value from Sky
-          actor = createActor(machine as any, {
+          actor = createActor(machine as never, {
             snapshot: skyEvent.snapshot,
           });
 

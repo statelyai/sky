@@ -1,12 +1,24 @@
 import { SkyConfigFile, actorFromStately } from '@statelyai/sky';
 import { useSelector } from '@xstate/react';
 import { useEffect, useState } from 'react';
-import { Actor, AnyStateMachine, createActor, fromPromise } from 'xstate';
+import {
+  Actor,
+  AnyStateMachine,
+  EventFromLogic,
+  SnapshotFrom,
+  createActor,
+  fromPromise,
+} from 'xstate';
 
 export function useStatelyActor<T extends AnyStateMachine>(
   options: Parameters<typeof actorFromStately>[0],
   skyConfig?: SkyConfigFile<T>,
-) {
+): readonly [
+  SnapshotFrom<T>,
+  ((event: EventFromLogic<T>) => void) | undefined,
+  Actor<T> | undefined,
+  { isConnecting: boolean },
+] {
   if (!skyConfig) {
     throw new Error(
       `You need to run xstate sky "src/**/*.ts?(x)" before you can use the Stately Sky actor with url ${options.url}`,
@@ -15,7 +27,7 @@ export function useStatelyActor<T extends AnyStateMachine>(
 
   const [maybeActor, setMaybeActor] = useState<Actor<T>>();
   const state = useSelector(
-    maybeActor ?? createActor(skyConfig.machine as any),
+    maybeActor ?? createActor(skyConfig.machine as never),
     (snapshot) => snapshot,
   );
 
