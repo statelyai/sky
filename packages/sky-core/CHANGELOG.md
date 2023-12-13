@@ -1,5 +1,11 @@
 # @statelyai/sky
 
+## 0.0.11
+
+### Patch Changes
+
+- [#20](https://github.com/statelyai/sky/pull/20) [`771524f`](https://github.com/statelyai/sky/commit/771524ff2ed3f48d72261e19ef12fa39ee934512) Thanks [@mellson](https://github.com/mellson)! - Fix the generic typing.
+
 ## 0.0.10
 
 ### Patch Changes
