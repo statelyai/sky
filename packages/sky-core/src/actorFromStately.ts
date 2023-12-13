@@ -25,7 +25,7 @@ export async function actorFromStately<T extends AnyStateMachine>(
     onPlayerLeft?: ({ numberOfPlayers }: { numberOfPlayers: number }) => void;
   },
   skyConfig?: SkyConfigFile<T>,
-) {
+): Promise<Actor<T>> {
   if (!skyConfig) {
     throw new Error(
       `You need to run xstate sky "src/**/*.ts?(x)" before you can use the Stately Sky actor with url ${url}`,
