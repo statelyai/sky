@@ -13,7 +13,7 @@ import {
 export function useStatelyActor<T extends AnyStateMachine>(
   options: Parameters<typeof actorFromStately>[0],
   skyConfig?: SkyConfigFile<T>,
-): [
+): readonly [
   SnapshotFrom<T>,
   ((event: EventFromLogic<T>) => void) | undefined,
   Actor<T> | undefined,
