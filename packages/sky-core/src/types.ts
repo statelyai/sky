@@ -36,12 +36,12 @@ type InternalSkyClientSimulateEvent =
 
 type InternalSkyClientActorEvent =
   | {
-      type: 'actor.init';
+      type: 'actor.init' | 'actor.connect.init';
       apiBaseURL: string;
       actorId: string;
       sessionId?: string;
     }
-  | { type: 'actor.send'; event: AnyEventObject };
+  | { type: 'actor.send' | 'actor.connect.send'; event: AnyEventObject };
 
 type InternalClientEditorEvent = { type: 'digraphEvent'; event: any };
 
