@@ -11,3 +11,8 @@ export const sendToSky = (socket: PartySocket, event: SkyClientEvent) => {
 export function skyConnectionInfo() {
   return { host: SKY_HOST, apiBaseURL: SKY_API_URL };
 }
+
+export const isNode =
+  typeof process !== 'undefined' &&
+  typeof process.versions?.node !== 'undefined' &&
+  typeof document === 'undefined';

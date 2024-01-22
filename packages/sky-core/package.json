@@ -31,10 +31,14 @@
   "homepage": "https://github.com/statelyai/sky/tree/main/packages/sky-core#readme",
   "dependencies": {
     "partysocket": "0.0.21",
-    "superjson": "^2"
+    "superjson": "^2",
+    "uuid": "^9.0.1",
+    "ws": "^8.16.0"
   },
   "devDependencies": {
     "@statelyai/inspect": "^0.2.0",
+    "@types/uuid": "^9.0.7",
+    "@types/ws": "^8.5.10",
     "xstate": "^5.5.1"
   },
   "peerDependencies": {

@@ -30,7 +30,8 @@
     "changeset": "changeset",
     "release": "changeset publish",
     "version": "changeset version",
-    "dev": "yarn build && ./scripts/dev.sh"
+    "dev": "yarn build && ./scripts/dev.sh",
+    "test": "ts-node packages/sky-core/src/inspectMachine.ts"
   },
   "preconstruct": {
     "packages": [

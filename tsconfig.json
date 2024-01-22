@@ -8,7 +8,8 @@
     "noEmit": true,
     "isolatedModules": true,
     "skipLibCheck": true,
-    "lib": ["ES2023"],
-    "jsx": "react-jsx"
+    "lib": ["ES2023", "DOM"],
+    "jsx": "react-jsx",
+    "esModuleInterop": true
   }
 }

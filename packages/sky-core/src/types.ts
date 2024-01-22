@@ -1,3 +1,4 @@
+import { StatelyInspectionEvent } from '@statelyai/inspect';
 import {
   AnyActorLogic,
   AnyEventObject,
@@ -51,10 +52,13 @@ export type SkyClientEditorEvent = SafeSkyEvent & InternalClientEditorEvent;
 
 export type SkyClientActorEvent = SafeSkyEvent & InternalSkyClientActorEvent;
 
+export type SkyClientInspectionEvent = SafeSkyEvent & StatelyInspectionEvent;
+
 export type SkyClientEvent =
   | SkyClientSimulateEvent
   | SkyClientActorEvent
-  | SkyClientEditorEvent;
+  | SkyClientEditorEvent
+  | SkyClientInspectionEvent;
 
 type InternalSkyServerSimulateEvent =
   | { type: 'simulation.start'; value?: StateValue }
