@@ -30,8 +30,15 @@
   },
   "homepage": "https://github.com/statelyai/sky/tree/main/packages/sky-core#readme",
   "dependencies": {
-    "partysocket": "0.0.17",
-    "superjson": "1.13.1",
-    "xstate": "5.2.1"
+    "partysocket": "0.0.21",
+    "superjson": "^2"
+  },
+  "devDependencies": {
+    "@statelyai/inspect": "^0.2.0",
+    "xstate": "^5.5.1"
+  },
+  "peerDependencies": {
+    "@statelyai/inspect": "^0.2.0",
+    "xstate": "^5.5.1"
   }
 }
