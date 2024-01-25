@@ -52,7 +52,14 @@ export type SkyClientEditorEvent = SafeSkyEvent & InternalClientEditorEvent;
 
 export type SkyClientActorEvent = SafeSkyEvent & InternalSkyClientActorEvent;
 
-export type SkyClientInspectionEvent = SafeSkyEvent & StatelyInspectionEvent;
+export type SkyClientInspectionEvent = SafeSkyEvent &
+  (
+    | StatelyInspectionEvent
+    | {
+        type: 'inspection.init';
+        apiBaseURL: string;
+      }
+  );
 
 export type SkyClientEvent =
   | SkyClientSimulateEvent

@@ -5,6 +5,7 @@ import { isNode, sendToSky, skyConnectionInfo } from './utils';
 
 export function createInspector(options: {
   apiKey: string;
+  onerror?: (error: Error) => void;
 }): ReturnType<typeof inspectCreator> {
   const { host, apiBaseURL } = skyConnectionInfo();
   const server = apiBaseURL.replace('/api/sky', '');
@@ -14,10 +15,9 @@ export function createInspector(options: {
   const partySocket = new PartySocket({
     host,
     room,
-    id: sessionId,
     WebSocket: isNode ? require('ws') : undefined,
   });
-  partySocket.onerror = console.error;
+  partySocket.onerror = options.onerror ?? console.error;
   partySocket.onopen = () => {
     console.log('Connected to Sky, open your live inspect session:');
     console.log(`${server}/inspect/${sessionId}`);
