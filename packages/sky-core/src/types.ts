@@ -1,3 +1,4 @@
+import { StatelyInspectionEvent } from '@statelyai/inspect';
 import {
   AnyActorLogic,
   AnyEventObject,
@@ -36,12 +37,12 @@ type InternalSkyClientSimulateEvent =
 
 type InternalSkyClientActorEvent =
   | {
-      type: 'actor.init';
+      type: 'actor.init' | 'actor.connect.init';
       apiBaseURL: string;
       actorId: string;
       sessionId?: string;
     }
-  | { type: 'actor.send'; event: AnyEventObject };
+  | { type: 'actor.send' | 'actor.connect.send'; event: AnyEventObject };
 
 type InternalClientEditorEvent = { type: 'digraphEvent'; event: any };
 
@@ -51,10 +52,20 @@ export type SkyClientEditorEvent = SafeSkyEvent & InternalClientEditorEvent;
 
 export type SkyClientActorEvent = SafeSkyEvent & InternalSkyClientActorEvent;
 
+export type SkyClientInspectionEvent = SafeSkyEvent &
+  (
+    | StatelyInspectionEvent
+    | {
+        type: 'inspection.init';
+        apiBaseURL: string;
+      }
+  );
+
 export type SkyClientEvent =
   | SkyClientSimulateEvent
   | SkyClientActorEvent
-  | SkyClientEditorEvent;
+  | SkyClientEditorEvent
+  | SkyClientInspectionEvent;
 
 type InternalSkyServerSimulateEvent =
   | { type: 'simulation.start'; value?: StateValue }
