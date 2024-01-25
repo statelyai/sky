@@ -758,14 +758,13 @@
   resolved "https://registry.npmjs.org/@sindresorhus/is/-/is-0.14.0.tgz"
   integrity sha512-9NET910DNaIPngYnLLPeg+Ogzqsi9uM4mSboU5y6p8S5DzMTVEsJZrawi+BoDNUVBa2DhJqQYUFvMDfgU062LQ==
 
-"@statelyai/inspect@^0.2.0":
-  version "0.2.0"
-  resolved "https://registry.npmjs.org/@statelyai/inspect/-/inspect-0.2.0.tgz"
-  integrity sha512-Bbmg/n81NmmWTwNdQnoJm2EIpgNU6ew8/Let108pCAw/pa3GOhZUPny85sxFbtn6qB+4OxsRZ+Avl2ze+Jt89g==
+"@statelyai/inspect@^0.2.1":
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/@statelyai/inspect/-/inspect-0.2.1.tgz#64bce41ea2eb7e21992b18951cd9746602ea3068"
+  integrity sha512-ISHiXI6Y4/+zroe4ZKeXmvWc9JseNr2YJ3riZKL/CHUYqrYi2ykyzCoV52/tN4+1YDK1MNIK+5WFQSarJi7jPQ==
   dependencies:
     fast-safe-stringify "^2.1.1"
     isomorphic-ws "^5.0.0"
-    xstate "5.1.0"
 
 "@szmarczak/http-timer@^1.1.2":
   version "1.1.2"
@@ -859,10 +858,10 @@
   dependencies:
     "@types/node" "*"
 
-"@xstate/react@^4.0.2":
-  version "4.0.2"
-  resolved "https://registry.npmjs.org/@xstate/react/-/react-4.0.2.tgz"
-  integrity sha512-t5Xau/H8nS9nlowV+72RneqaQ/wqkQ8C/8ij4gEvHcoCQptc2REgZkjOpV74xyTabUZnUeYwdDTsMmz5ot3S+Q==
+"@xstate/react@^4.0.3":
+  version "4.0.3"
+  resolved "https://registry.yarnpkg.com/@xstate/react/-/react-4.0.3.tgz#038382f28ae050c6e6611cf4d072e542608f6a0c"
+  integrity sha512-yGxW6WljN04tyKxHrmejVdnKeRt26rzqNmJFYXtMZSUTDI98xFToI18eSoW2tSoyGRH/3Bmb8kUsa3l9Mr2E4Q==
   dependencies:
     use-isomorphic-layout-effect "^1.1.2"
     use-sync-external-store "^1.0.0"
@@ -2481,10 +2480,10 @@ parse-json@^5.0.0, parse-json@^5.1.0:
     json-parse-even-better-errors "^2.3.0"
     lines-and-columns "^1.1.6"
 
-partysocket@0.0.21:
-  version "0.0.21"
-  resolved "https://registry.npmjs.org/partysocket/-/partysocket-0.0.21.tgz"
-  integrity sha512-l+pFM1cOZlc+wzHpnjh1VL4LdhtSvBZQdUbUhaw5lEkbF6916c17vGAMKhiAarcTghHSX9FiO+K3vB7LxLkoVA==
+partysocket@^0.0.25:
+  version "0.0.25"
+  resolved "https://registry.yarnpkg.com/partysocket/-/partysocket-0.0.25.tgz#f35fd89d9e4202ff6115ccdc8a4ebcc6acaf0bb1"
+  integrity sha512-1oCGA65fydX/FgdnsiBh68buOvfxuteoZVSb3Paci2kRp/7lhF0HyA8EDb5X/O6FxId1e+usPTQNRuzFEvkJbQ==
   dependencies:
     event-target-shim "^6.0.2"
 
@@ -3262,15 +3261,10 @@ ws@^8.16.0:
   resolved "https://registry.npmjs.org/ws/-/ws-8.16.0.tgz"
   integrity sha512-HS0c//TP7Ina87TfiPUz1rQzMhHrl/SG2guqRcTOIUYD2q8uhUdNHZYJUaQ8aTGPzCh+c6oawMKW35nFl1dxyQ==
 
-xstate@5.1.0:
-  version "5.1.0"
-  resolved "https://registry.npmjs.org/xstate/-/xstate-5.1.0.tgz"
-  integrity sha512-p7kkckyBwcjhcV782rx+jGg0zGLvu9AlNjsQ8ijmBUCUq/eyUPno3ZNwr2AjnfJ1Rx16ZnjYM0JQuQfu2yjTjw==
-
-xstate@^5.5.1:
-  version "5.5.1"
-  resolved "https://registry.npmjs.org/xstate/-/xstate-5.5.1.tgz"
-  integrity sha512-12Was43pPJKg3JWoelOREtTNYgFz6tRlNrMaRuqOibEe3pn8/uOWiP8ySMfOynyIjHUxd4BU7wV9O54Ma3FM6g==
+xstate@^5.5.2:
+  version "5.5.2"
+  resolved "https://registry.yarnpkg.com/xstate/-/xstate-5.5.2.tgz#a196495b037bff06b5523b37a8f51514be73fd81"
+  integrity sha512-RLf9wc5HDO0pvj2TQQ+lY6tDW8CU8Entfgmtzzo6NhkC8qOEBXSN6WUSvnUM7NHZgdih06+by1b4nbaHVu1c+g==
 
 y18n@^4.0.0:
   version "4.0.3"
