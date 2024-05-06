@@ -30,13 +30,13 @@
   },
   "homepage": "https://github.com/statelyai/sky/tree/main/packages/sky-react#readme",
   "dependencies": {
-    "@statelyai/sky": "*",
-    "@xstate/react": "4.0.1",
-    "xstate": "5.2.1"
+    "@statelyai/sky": "^0.0.11",
+    "@xstate/react": "^4.1.1",
+    "xstate": "^5.13.0"
   },
   "devDependencies": {
-    "@types/react": "^18.2.22",
-    "react": "^18.2.0"
+    "@types/react": "^18.3.1",
+    "react": "^18.3.1"
   },
   "peerDependencies": {
     "react": "^16.8.0 || ^17.0.0 || ^18.0.0"

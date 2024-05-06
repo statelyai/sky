@@ -19,7 +19,7 @@
     "@preconstruct/cli": "^2.8.1",
     "prettier": "^3.0.3",
     "prettier-plugin-organize-imports": "^3.2.3",
-    "typescript": "^5.2.2"
+    "typescript": "^5.4.5"
   },
   "scripts": {
     "preinstall": "node ./scripts/ensure-yarn.js",

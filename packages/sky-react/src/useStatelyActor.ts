@@ -27,6 +27,7 @@ export function useStatelyActor<T extends AnyStateMachine>(
 
   const [maybeActor, setMaybeActor] = useState<Actor<T>>();
   const state = useSelector(
+    // @ts-ignore TODO: fix
     maybeActor ?? createActor(skyConfig.machine as never),
     (snapshot) => snapshot,
   );
