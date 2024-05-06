@@ -1,5 +1,11 @@
 # @statelyai/sky
 
+## 0.0.12
+
+### Patch Changes
+
+- [#24](https://github.com/statelyai/sky/pull/24) [`acad617`](https://github.com/statelyai/sky/commit/acad6179e6cba3bdcd1167255937cd2a4d888163) Thanks [@davidkpiano](https://github.com/davidkpiano)! - Update dependencies
+
 ## 0.0.11
 
 ### Patch Changes
