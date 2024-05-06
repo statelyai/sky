@@ -17,12 +17,14 @@ export async function actorFromStately<T extends AnyStateMachine>(
     sessionId,
     onPlayerJoined,
     onPlayerLeft,
+    input,
   }: {
     apiKey: string;
     url: string;
     sessionId: string;
     onPlayerJoined?: ({ numberOfPlayers }: { numberOfPlayers: number }) => void;
     onPlayerLeft?: ({ numberOfPlayers }: { numberOfPlayers: number }) => void;
+    input: unknown;
   },
   skyConfig?: SkyConfigFile<T>,
 ): Promise<Actor<T>> {
@@ -80,6 +82,7 @@ export async function actorFromStately<T extends AnyStateMachine>(
           // Start the actor with the initial value from Sky
           actor = createActor(machine as never, {
             snapshot: skyEvent.snapshot,
+            input: input as any,
           });
 
           // Send all events from the actor to Sky except for events that originate from Sky
