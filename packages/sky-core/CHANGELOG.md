@@ -1,5 +1,11 @@
 # @statelyai/sky
 
+## 0.0.13
+
+### Patch Changes
+
+- [#26](https://github.com/statelyai/sky/pull/26) [`3777b45`](https://github.com/statelyai/sky/commit/3777b45fa3a04db16c58520c5791310c55664bbc) Thanks [@davidkpiano](https://github.com/davidkpiano)! - Fix input
+
 ## 0.0.12
 
 ### Patch Changes
