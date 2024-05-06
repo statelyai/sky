@@ -24,7 +24,7 @@ export async function actorFromStately<T extends AnyStateMachine>(
     sessionId: string;
     onPlayerJoined?: ({ numberOfPlayers }: { numberOfPlayers: number }) => void;
     onPlayerLeft?: ({ numberOfPlayers }: { numberOfPlayers: number }) => void;
-    input: unknown;
+    input?: unknown;
   },
   skyConfig?: SkyConfigFile<T>,
 ): Promise<Actor<T>> {
