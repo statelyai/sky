@@ -22,7 +22,7 @@
   ],
   "keywords": [],
   "scripts": {},
-  "repository": "https://github.com/statelyai/sky/tree/master/packages/sky-react",
+  "repository": "https://github.com/statelyai/sky/tree/main/packages/sky-react",
   "author": "Stately Team",
   "license": "MIT",
   "bugs": {
@@ -32,10 +32,10 @@
   "dependencies": {
     "@statelyai/sky": "^0.0.13",
     "@xstate/react": "^4.1.1",
-    "xstate": "^5.13.0"
+    "xstate": "^5.15.0"
   },
   "devDependencies": {
-    "@types/react": "^18.3.1",
+    "@types/react": "^18.3.3",
     "react": "^18.3.1"
   },
   "peerDependencies": {
