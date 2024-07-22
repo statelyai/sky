@@ -11,15 +11,15 @@
   "author": "Stately Team",
   "license": "MIT",
   "dependencies": {
-    "@babel/core": "^7.23.0",
-    "@babel/preset-typescript": "^7.23.0",
-    "@changesets/changelog-github": "^0.4.8",
-    "@changesets/cli": "^2.26.2",
-    "@manypkg/cli": "^0.21.0",
-    "@preconstruct/cli": "^2.8.1",
-    "prettier": "^3.0.3",
-    "prettier-plugin-organize-imports": "^3.2.3",
-    "typescript": "^5.4.5"
+    "@babel/core": "^7.24.9",
+    "@babel/preset-typescript": "^7.24.7",
+    "@changesets/changelog-github": "^0.5.0",
+    "@changesets/cli": "^2.27.7",
+    "@manypkg/cli": "^0.21.4",
+    "@preconstruct/cli": "^2.8.7",
+    "prettier": "^3.3.3",
+    "prettier-plugin-organize-imports": "^4.0.0",
+    "typescript": "^5.5.3"
   },
   "scripts": {
     "preinstall": "node ./scripts/ensure-yarn.js",
@@ -33,6 +33,9 @@
     "copy-sky": "cp -r packages/sky-core/ ../sky-starter-app/node_modules/@statelyai/sky",
     "copy-sky-react": "cp -r packages/sky-react/ ../sky-starter-app/node_modules/@statelyai/sky-react",
     "dev": "yarn build && yarn copy-sky && yarn copy-sky-react"
+  },
+  "manypkg": {
+    "defaultBranch": "main"
   },
   "preconstruct": {
     "packages": [

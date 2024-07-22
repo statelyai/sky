@@ -22,16 +22,16 @@
   ],
   "keywords": [],
   "scripts": {},
-  "repository": "https://github.com/statelyai/sky/tree/master/packages/sky-core",
+  "repository": "https://github.com/statelyai/sky/tree/main/packages/sky-core",
   "author": "Stately Team",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/statelyai/sky/issues"
   },
-  "homepage": "https://github.com/statelyai/sky/tree/main/packages/sky-core#readme",
+  "homepage": "https://stately.ai/docs/sky",
   "dependencies": {
     "partysocket": "^1.0.1",
     "superjson": "^2.2.1",
-    "xstate": "^5.13.0"
+    "xstate": "^5.15.0"
   }
 }
