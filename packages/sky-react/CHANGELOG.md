@@ -1,5 +1,14 @@
 # @statelyai/sky-react
 
+## 0.0.14
+
+### Patch Changes
+
+- [#29](https://github.com/statelyai/sky/pull/29) [`2e17c4a`](https://github.com/statelyai/sky/commit/2e17c4a9c58011e3e1b742cf02a86c3cf3031071) Thanks [@mellson](https://github.com/mellson)! - Updated dependencies and fixed manypkg default branch
+
+- Updated dependencies [[`2e17c4a`](https://github.com/statelyai/sky/commit/2e17c4a9c58011e3e1b742cf02a86c3cf3031071)]:
+  - @statelyai/sky@0.0.14
+
 ## 0.0.13
 
 ### Patch Changes
