@@ -1,6 +1,6 @@
 {
   "name": "@statelyai/sky",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "description": "",
   "main": "dist/statelyai-sky.cjs.js",
   "module": "dist/statelyai-sky.esm.js",
