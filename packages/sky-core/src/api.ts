@@ -1,22 +1,27 @@
-import { isErrorWithMessage, skyConnectionInfo } from './utils';
+import { hasStringError, skyConnectionInfo } from './utils';
 
 export type Version = '1.0';
 export type Endpoint =
   | {
       method: 'get-room-id';
-      data: { roomId: string };
+      data: { skyRoomId: string };
     }
   | {
       method: 'some-other-endpoint';
       data: { someData: string };
     };
 
-export type SkyApiType = {
+type EndpointData = {
   [E in Endpoint as E['method']]: E['data'];
 };
 
-export async function callSky<M extends Endpoint['method']>(
-  endpoint: M,
+// This is the type we consume in the Studio SKY API to ensure we return the correct data or an error message
+export type EndpointHandler<E extends Endpoint['method']> =
+  | EndpointData[E]
+  | { error: string };
+
+export async function callSky<E extends Endpoint['method']>(
+  endpoint: E,
   apiKey: string,
   body?: any,
 ) {
@@ -31,14 +36,14 @@ export async function callSky<M extends Endpoint['method']>(
     });
     const data = await response.json();
     if (!response.ok) {
-      if (isErrorWithMessage(data)) {
-        console.error(data.message);
-        throw new Error(data.message);
+      if (hasStringError(data)) {
+        console.error(data.error);
+        throw new Error(data.error);
       } else {
         throw new Error('An unknown error occurred');
       }
     }
-    return data as SkyApiType[typeof endpoint];
+    return data as EndpointData[E];
   } catch (error) {
     throw error;
   }

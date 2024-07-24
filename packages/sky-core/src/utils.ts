@@ -11,12 +11,12 @@ export function skyConnectionInfo() {
   return { host: SKY_HOST, apiBaseURL: SKY_API_URL };
 }
 
-export const isErrorWithMessage = (
+export const hasStringError = (
   error: unknown,
 ): error is {
-  message: string;
+  error: string;
 } =>
   typeof error === 'object' &&
   error !== null &&
-  'message' in error &&
-  typeof (error as Record<string, unknown>).message === 'string';
+  'error' in error &&
+  typeof (error as Record<string, unknown>).error === 'string';
