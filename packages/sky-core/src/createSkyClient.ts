@@ -22,6 +22,9 @@ export type SkyClient<TLogic extends AnyActorLogic> = {
 
   // TODO: Not sure we need this, it's just here for convenience during development
   inspectListener?: (event: InspectionEvent) => void;
+
+  // TODO: move this to a options object
+  fullReplay?: boolean;
 };
 
 // We have this global map to ensure that we don't create duplicate clients across potential re-renders
