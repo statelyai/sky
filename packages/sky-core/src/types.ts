@@ -2,6 +2,7 @@ import {
   AnyActorLogic,
   AnyEventObject,
   AnyStateMachine,
+  InspectionEvent,
   SnapshotFrom,
   StateValue,
 } from 'xstate';
@@ -51,10 +52,22 @@ export type SkyClientEditorEvent = SafeSkyEvent & InternalClientEditorEvent;
 
 export type SkyClientActorEvent = SafeSkyEvent & InternalSkyClientActorEvent;
 
+type SkyClientInspectionEvent = SafeSkyEvent &
+  (
+    | {
+        type: 'sky.client.connect';
+      }
+    | {
+        type: 'sky.inspection.event';
+        event: InspectionEvent;
+      }
+  );
+
 export type SkyClientEvent =
   | SkyClientSimulateEvent
   | SkyClientActorEvent
-  | SkyClientEditorEvent;
+  | SkyClientEditorEvent
+  | SkyClientInspectionEvent;
 
 type InternalSkyServerSimulateEvent =
   | { type: 'simulation.start'; value?: StateValue }
@@ -69,6 +82,17 @@ type InternalSkyServerActorEvent =
   | { type: 'actor.send'; event: AnyEventObject }
   | { type: 'actor.stop'; event: AnyEventObject }
   | { type: 'actor.error'; error: string };
+
+type SkyServerInspectionEvent = SafeSkyEvent &
+  (
+    | {
+        type: 'sky.inspection.event';
+        event: InspectionEvent;
+      }
+    | {
+        type: 'sky.client.connected';
+      }
+  );
 
 type MultiplayerSkyEvent = {
   type: 'player.joined' | 'player.left';
@@ -87,4 +111,5 @@ export type SkyServerEvent =
   | SkyServerSimulateEvent
   | SkyServerActorEvent
   | SkyServerMultiplayerEvent
-  | SkyServerEditorEvent;
+  | SkyServerEditorEvent
+  | SkyServerInspectionEvent;
