@@ -4,5 +4,4 @@ node_modules
 dist/
 
 # local dev files
-scripts/dev.sh
 .env
