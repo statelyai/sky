@@ -83,11 +83,11 @@ export function createSkyClient<TLogic extends AnyActorLogic>({
     },
   };
 
-  callSky('get-room-id', apiKey).then(({ skyRoomId }) => {
+  callSky('get-room-id', apiKey, {}).then(({ skyRoomId }) => {
     const room = `${skyRoomId}-${sessionId}`;
     console.log(`Connected to Sky room: ${room}`);
 
-    const { host } = skyConnectionInfo();
+    const { apiBaseURL, host } = skyConnectionInfo();
     currentSocket = new PartySocket({ host, room });
 
     currentSocket.onerror = (err) => console.error(err);
@@ -95,7 +95,9 @@ export function createSkyClient<TLogic extends AnyActorLogic>({
     currentSocket.onopen = () => {
       if (!currentSocket) return;
       sendToSky(currentSocket, {
+        apiBaseURL,
         apiKey,
+        sessionId,
         type: 'sky.client.connect',
       });
     };
@@ -112,6 +114,13 @@ export function createSkyClient<TLogic extends AnyActorLogic>({
           if (offlineEvents.length > 0) {
             offlineEvents.forEach(inspect);
             offlineEvents = [];
+          }
+          if (skyClient.inspectListener) {
+            callSky('get-events', apiKey, { sessionId }).then(({ events }) => {
+              if (skyClient.inspectListener) {
+                events.forEach(skyClient.inspectListener);
+              }
+            });
           }
           break;
         }

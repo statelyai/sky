@@ -1,15 +1,27 @@
+import { InspectionEvent } from 'xstate';
 import { hasStringError, skyConnectionInfo } from './utils';
 
 export type Version = '1.0';
 export type Endpoint =
   | {
       method: 'get-room-id';
+      body: {};
       data: { skyRoomId: string };
     }
   | {
-      method: 'some-other-endpoint';
-      data: { someData: string };
+      method: 'save-event';
+      body: InspectionEvent & { sessionId: string };
+      data: { eventId: string };
+    }
+  | {
+      method: 'get-events';
+      body: { sessionId: string };
+      data: { events: InspectionEvent[] };
     };
+
+type EndpointBody = {
+  [E in Endpoint as E['method']]: E['body'];
+};
 
 type EndpointData = {
   [E in Endpoint as E['method']]: E['data'];
@@ -23,17 +35,19 @@ export type EndpointHandler<E extends Endpoint['method']> =
 export async function callSky<E extends Endpoint['method']>(
   endpoint: E,
   apiKey: string,
-  body?: any,
+  body: EndpointBody[E],
+  apiUrl?: string,
 ) {
-  const { apiBaseURL } = skyConnectionInfo();
-  const apiVersion: Version = '1.0';
-  const url = `${apiBaseURL}/${apiVersion}/${endpoint}`;
+  const { apiBaseURL } = apiUrl ? { apiBaseURL: apiUrl } : skyConnectionInfo();
+  const skyVersion: Version = '1.0';
+  const url = `${apiBaseURL}/${skyVersion}/${endpoint}`;
   try {
     const response = await fetch(url, {
       headers: { Authorization: `Bearer ${apiKey}` },
       method: 'POST',
       body: body ? JSON.stringify(body) : undefined,
     });
+    // TODO: should we use superjson here?
     const data = await response.json();
     if (!response.ok) {
       if (hasStringError(data)) {

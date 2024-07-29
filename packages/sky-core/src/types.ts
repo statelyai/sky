@@ -56,6 +56,8 @@ type SkyClientInspectionEvent = SafeSkyEvent &
   (
     | {
         type: 'sky.client.connect';
+        apiBaseURL: string;
+        sessionId: string;
       }
     | {
         type: 'sky.inspection.event';
